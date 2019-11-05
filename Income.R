@@ -1,0 +1,11 @@
+library(tseries)
+library(forecast)
+income=read.csv(file.choose())
+class(income)
+income1=ts(income,start = c(2000,4),end = c(2014,1),frequency = 4)
+income1
+plot(income1)
+decom=decompose(income1)
+plot(decom)
+plot(income1)
+abline(reg=lm(income1~time(income1)))
